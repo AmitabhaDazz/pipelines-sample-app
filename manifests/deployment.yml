@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: amitabhadazzpipelinessampleapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: amitabhadazzpipelinessampleapp
+  template:
+    metadata:
+      labels:
+        app: amitabhadazzpipelinessampleapp 
+    spec:
+      containers:
+        - name: amitabhadazzpipelinessampleapp 
+          image: reg1231231.azurecr.io/amitabhadazzpipelinessampleapp
+          ports:
+          - containerPort: 8080
