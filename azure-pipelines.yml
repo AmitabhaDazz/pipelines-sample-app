@@ -58,6 +58,12 @@ stages:
       runOnce:
         deploy:
           steps:
+          - task: AzureCLI@2
+            inputs:
+              azureSubscription: 'Microsoft Azure (DebabrataHowleeCAstgTEST): #1210033(53c6e7e5-5529-42ce-9543-f4fa9e6bfc4f)'
+              scriptType: 'bash'
+              scriptLocation: 'inlineScript'
+              inlineScript: 'kubectl get nodes'
           - task: KubernetesManifest@0
             displayName: Create imagePullSecret
             inputs:
